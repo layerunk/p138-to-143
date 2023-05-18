@@ -1,0 +1,60 @@
+body {
+    background-size: cover;
+}
+
+#title {
+    font-family: 'Foldit', cursive;
+    padding: 5px;
+    line-height: 1;
+    width: 100%;
+    background-color: rgba(14,43,89,255);
+    font-size: 50px;
+    text-align: center;
+}
+
+#ins{
+    font-size: 25px;
+    background-color: rgba(14,43,89,255);
+    border-width: 1px;
+    width: 150px;
+    height: 40px;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5px;
+}
+
+#stuart{
+    font-size: 25px;
+    background-color: transparent;
+    border-width: 1px;
+    width: 150px;
+    height: 40px;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    float: right;
+    margin-right: 170px;
+    margin-top: 150px;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#stat{
+    text-align: center;
+    font-size: 25px;
+    background-color: transparent;
+    border-width: 1px;
+    width: 360px;
+    line-height: 2;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    float: right;
+    margin-right: 400px;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+}
