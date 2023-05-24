@@ -58,3 +58,32 @@ body {
     border-radius: 5px;
     font-family: 'Quicksand', sans-serif;
 }
+
+
+#linuklinuk{
+    margin: 0px;
+    line-height: 2;
+    width: 100%;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.modal-dialog{
+    width:90%;
+}
+
+#sins{
+    width:100%;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+#ssins{
+    width:100%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}

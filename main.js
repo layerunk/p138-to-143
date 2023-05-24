@@ -126,7 +126,7 @@ if(pcscore ==4){
     fill("white");
     stroke("white");
     textSize(25)
-    loadFont("Foldit");
+    
     text("Game Over!☹☹",width/2,height/2);
     document.getElementById("stat").innerHTML = "Status Is ' You Have Lost '";
     text("Reload The Page!",width/2,height/2+30)
