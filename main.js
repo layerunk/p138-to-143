@@ -1,3 +1,4 @@
+
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -21,10 +22,22 @@ var ball = {
 function setup(){
   var canvas =  createCanvas(700,600);
   canvas.position(330 , 200);
+  canvas.parent('cp');
+
+  v = createCapture(VIDEO);
+  v.hide();
+
+  modale = ml5.poseNet(video, consoler);
+  modale.on('pose' , result);
 }
 
+function result(result){
+  console.log(result);
+}
 
 function draw(){
+
+  image(v, 0, 0, 700, 600);
 
  background(0); 
 
@@ -119,7 +132,7 @@ function move(){
     navigator.vibrate(100);
   }
 }
-if(pcscore ==4){
+if(pcscore ==1){
     fill(27, 134, 227);
     stroke(0)
     rect(0,0,width,height-1);

@@ -54,7 +54,7 @@ body {
     border-style: solid;
     color: white;
     float: right;
-    margin-right: 400px;
+    margin-right: 340px;
     border-radius: 5px;
     font-family: 'Quicksand', sans-serif;
 }
@@ -86,4 +86,9 @@ body {
     width:100%;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+}
+
+canvas{
+    border-radius: 15px;
+    border: 3px groove #63F4FF;
 }
