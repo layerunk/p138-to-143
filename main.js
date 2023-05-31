@@ -1,4 +1,8 @@
 
+ry = 0;
+rx = 0;
+rs = 0;
+
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -20,24 +24,40 @@ var ball = {
 }
 
 function setup(){
-  var canvas =  createCanvas(700,600);
+  canvas =  createCanvas(700,600);
   canvas.position(330 , 200);
   canvas.parent('cp');
 
   v = createCapture(VIDEO);
-  v.hide();
+  v.size(790 , 360);
+	v.parent('web');
 
-  modale = ml5.poseNet(video, consoler);
+  modale = ml5.poseNet(v, consoler);
   modale.on('pose' , result);
 }
 
-function result(result){
-  console.log(result);
+function consoler(){
+	console.log("The modal is Initiated");
+}
+  
+function result(results){
+	console.log(results);
+	if(results.length > 0){
+		rx = results[0].pose.rightWrist.x;
+		ry = results[0].pose.rightWrist.y;
+    rs = results[0].pose.keypoints[10].score;
+	}
 }
 
 function draw(){
 
-  image(v, 0, 0, 700, 600);
+  if(rs > 0.2){
+    console.log(rx + " " + ry);
+    console.log(rs + " this is the score")
+    fill("red");
+    stroke("red");
+    circle(rx , ry, 6);
+  }
 
  background(0); 
 
