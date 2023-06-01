@@ -48,15 +48,21 @@ function result(results){
     rs = results[0].pose.keypoints[10].score;
 	}
 }
+function start(){
+  gamy = "start";
+}
 
 function draw(){
 
-  if(rs > 0.2){
-    console.log(rx + " " + ry);
-    console.log(rs + " this is the score")
-    fill("red");
-    stroke("red");
-    circle(rx , ry, 6);
+  if(gamy == "start"){
+    console.log("GAME ACTIVATED INIATION WILL BEGIN IN 5..... 4.... 3... 2.. 1. 0")
+    if(rs > 0.2){
+      console.log(rx + " " + ry);
+      console.log(rs + " this is the score")
+      fill("red");
+      stroke("red");
+      circle(rx , ry, 6);
+    }
   }
 
  background(0); 
