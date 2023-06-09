@@ -1,15 +1,16 @@
 
+gamy = "";
 ry = 0;
 rx = 0;
 rs = 0;
 
 var paddle2 =10,paddle1=10;
 
-var paddle1X = 10,paddle1Height = 110;
+var paddle1X = 10, paddle1Height = 110;
 var paddle2Y = 685,paddle2Height = 70;
 
 var score1 = 0, score2 =0;
-var paddle1Y;
+var paddle1Y = 0;
 
 var  playerscore =0;
 var audio1;
@@ -21,6 +22,11 @@ var ball = {
     r:20,
     dx:3,
     dy:3
+}
+
+function preload(){
+  missed = loadSound("missed.wav");
+  touch = loadSound("ball_touch_paddel.wav");
 }
 
 function setup(){
@@ -48,6 +54,7 @@ function result(results){
     rs = results[0].pose.keypoints[10].score;
 	}
 }
+
 function start(){
   gamy = "start";
 }
@@ -55,7 +62,7 @@ function start(){
 function draw(){
 
   if(gamy == "start"){
-    console.log("GAME ACTIVATED INIATION WILL BEGIN IN 5..... 4.... 3... 2.. 1. 0")
+    console.log("GAME ACTIVATED INITIATION WILL BEGIN IN 5..... 4.... 3... 2.. 1. 0")
     if(rs > 0.2){
       console.log(rx + " " + ry);
       console.log(rs + " this is the score")
@@ -80,7 +87,7 @@ function draw(){
    fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
-   paddle1Y = mouseY; 
+   paddle1Y = ry; 
    rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
    
    
@@ -148,11 +155,13 @@ function move(){
        ball.dx=-ball.dx-0.5;       
    }
   if (ball.x-2.5*ball.r/2< 0){
-  if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
+  if (ball.y >= paddle1Y && ball.y <= paddle1Y + paddle1Height) {
     ball.dx = -ball.dx+0.5;
+    touch.play()
     playerscore++;
   }
   else{
+    missed.play()
     pcscore++;
     reset();
     navigator.vibrate(100);
